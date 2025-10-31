@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import {HashLink} from "react-router-hash-link";
 
 const navItems = [
     { name: 'Home', href: '#hero'},
@@ -30,18 +31,25 @@ export const Navbar = () => {
         <nav className={cn("fixed w-full z-40 transition-all duration-300", isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-md" : "py-5 bg-transparent")}>
 
             <div className="container flex items-center justify-between">
-                <a className="text-xl font-bold text-primary flex items-center" href="#hero">
-                    <span className="relative z-10">
-                        <span className = "text-glow text-foreground"> Panagiotis Tselentis </span> Portfolio
-                    </span>
-                </a>
+                <HashLink smooth to="#hero" className="text-xl font-bold text-primary flex items-center">
+                <span className="relative z-10">
+                    <span className="text-glow text-foreground">Panagiotis Tselentis</span> Portfolio
+                </span>
+                </HashLink>
+
 
                 {/* Desktop Navigation Links */}
                 <div className="hidden md:flex space-x-8">
                     {navItems.map((item, key) => (
-                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300">
+                        <HashLink
+                            key={key}
+                            smooth
+                            to={item.href}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
                             {item.name}
-                        </a>
+                        </HashLink>
+
                     ))}
                 </div>
 
@@ -63,9 +71,14 @@ export const Navbar = () => {
                 >
                     <div className="flex flex-col space-y-8 text-xl">
                     {navItems.map((item, key) => (
-                        <a key={key} href={item.href} className="text-foreground/80 hover:text-primary transition-colors duration-300" onClick={() => setIsMenuOpen(false)}>
+                        <HashLink
+                            key={key}
+                            smooth
+                            to={item.href}
+                            className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        >
                             {item.name}
-                        </a>
+                        </HashLink>
                     ))}
                 </div>
                 </div>

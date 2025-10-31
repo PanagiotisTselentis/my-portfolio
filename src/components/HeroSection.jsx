@@ -1,4 +1,5 @@
 import { ArrowDown } from "lucide-react";
+import { HashLink } from "react-router-hash-link";
 
 export const HeroSection = () => {
     return (
@@ -19,9 +20,9 @@ export const HeroSection = () => {
                     </p>
 
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                        <a href="#projects" className="cosmic-button">
+                        <HashLink smooth to="#projects" className="cosmic-button">
                             View My Projects
-                        </a>
+                        </HashLink>
                     </div>
                 </div>
             </div>
