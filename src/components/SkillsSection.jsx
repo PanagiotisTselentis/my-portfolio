@@ -19,6 +19,8 @@ const skills = [
     { name: "Git & GitHub", level: 85, category: "Tools" },
     { name: "VS Code", level: 95, category: "Tools" },
     { name: "Docker", level: 90, category: "Tools" },
+    { name: "Linux", level: 85, category: "Tools" },
+    { name: "Bash", level: 80, category: "Tools" },
     
 ]
 
