@@ -19,10 +19,25 @@ export const HeroSection = () => {
                         I'm a passionate cybersecurity graduate with a knack for problem-solving and a love for technology.
                     </p>
 
-                    <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                        <HashLink smooth to="#projects" className="cosmic-button">
+                    <div className="pt-6 flex flex-wrap justify-center gap-4 opacity-0 animate-fade-in-delay-4">
+                        {/* View My Projects */}
+                        <HashLink
+                            smooth
+                            to="#projects"
+                            className="px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105 active:scale-95"
+                        >
                             View My Projects
                         </HashLink>
+
+                        {/* Download Resume */}
+                        <a
+                            href="/resume.pdf"
+                            download="Panagiotis_Tselentis_Resume.pdf"
+                            className="px-8 py-3 rounded-full border border-primary text-primary font-medium hover:bg-primary hover:text-white transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
+                        >
+                            <ArrowDown className="h-4 w-4" />
+                            Download Resume
+                        </a>
                     </div>
                 </div>
             </div>
