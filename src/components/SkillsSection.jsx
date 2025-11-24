@@ -1,43 +1,42 @@
+// ...existing code...
 import { useState } from "react";
 import { cn } from "../lib/utils";
 
 const skills = [
-    //Frontend
-    { name: "HTML/CSS", level: 50, category: "Frontend" },
-    { name: "JavaScript", level: 40, category: "Frontend" },
-    { name: "React", level: 40, category: "Frontend" },
-    { name: "Tailwind CSS", level: 40, category: "Frontend" },
+    // Recon / Reconnaissance
+    { name: "OSINT (Google, Shodan)", level: 70, category: "Recon" },
+    { name: "Nmap / Port Scanning", level: 75, category: "Recon" },
+    { name: "Subdomain Discovery", level: 60, category: "Recon" },
 
-    //Backend
-    { name: "Node.js", level: 40, category: "Backend" },
-    { name: "MongoDB", level: 50, category: "Backend" },
-    { name: "PostgreSQL", level: 80, category: "Backend" },
-    { name: "Python", level: 95, category: "Backend" },
-    { name: "Java", level: 90, category: "Backend" },
+    // Web Application
+    { name: "Burp Suite", level: 70, category: "Web" },
+    { name: "SQL Injection", level: 60, category: "Web" },
+    { name: "XSS (Cross-Site Scripting)", level: 60, category: "Web" },
+    { name: "OWASP Top 10", level: 65, category: "Web" },
 
-    //Tools
-    { name: "Git & GitHub", level: 85, category: "Tools" },
-    { name: "VS Code", level: 95, category: "Tools" },
-    { name: "Docker", level: 90, category: "Tools" },
-    { name: "Linux", level: 85, category: "Tools" },
-    { name: "Bash", level: 80, category: "Tools" },
-    
-]
+    // Network / Exploitation
+    { name: "Metasploit Basics", level: 60, category: "Network" },
+    { name: "Wireshark / Traffic Analysis", level: 60, category: "Network" },
+    { name: "Service/Fingerprint Analysis", level: 65, category: "Network" },
 
-const categories = ["All", "Frontend", "Backend", "Tools"];
+    // Scripting / Tools
+    { name: "Python (scripting)", level: 80, category: "Scripting" },
+    { name: "Bash", level: 75, category: "Scripting" },
+    { name: "PowerShell (basic)", level: 55, category: "Scripting" },
+    { name: "Git & GitHub", level: 70, category: "Scripting" },
+];
+
+const categories = ["All", "Recon", "Web", "Network", "Scripting"];
 
 export const SkillsSection = () => {
-
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredSkills = skills.filter(
         (skill) => activeCategory === "All" || skill.category === activeCategory
     );
 
-    return( 
-        <section 
-            id="skills" className="py-24 px-4 relative bg-secondary/30"
-        >
+    return(
+        <section id="skills" className="py-24 px-4 relative bg-secondary/30">
             <div className="container mx-auto max-w-5xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     My <span className="text-primary">Skills</span>
@@ -49,13 +48,17 @@ export const SkillsSection = () => {
                         <button
                             key={key}
                             onClick={() => setActiveCategory(category)}
-                            className={cn("px-5 py-2 rounded-full transition-colors duration-300", activeCategory === category ? "bg-primary text-foreground" : "bg-background/50 text-foreground/80 hover:bg-primary/70 hover:text-foreground")}
+                            className={cn(
+                                "px-5 py-2 rounded-full transition-colors duration-300",
+                                activeCategory === category
+                                    ? "bg-primary text-foreground"
+                                    : "bg-background/50 text-foreground/80 hover:bg-primary/70 hover:text-foreground"
+                            )}
                         >
                             {category}
                         </button>
                     ))}
                 </div>
-                
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredSkills.map((skill, key) => (
@@ -65,9 +68,10 @@ export const SkillsSection = () => {
                             </div>
 
                             <div className="w-full bg-background/20 rounded-full overflow-hidden h-4">
-                                <div 
-                                className="bg-primary h-2 rounded-full origin-left animate-[grow_1.5s_ease-out" 
-                                style={{width: skill.level + "%"}}/>
+                                <div
+                                    className="bg-primary h-2 rounded-full origin-left transition-all duration-700"
+                                    style={{ width: skill.level + "%" }}
+                                />
                             </div>
 
                             <div className="text-right mt-1">
@@ -80,3 +84,4 @@ export const SkillsSection = () => {
         </section>
     );
 }
+// ...existing code...
