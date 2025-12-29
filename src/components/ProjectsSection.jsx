@@ -13,7 +13,15 @@ const projects = [
         title: "Automated Security Lifecycle: From AI-Powered Hardening to Adversary Emulation",
         description: "Developed a Python framework that leverages a generative AI to automatically create and apply PowerShell scripts for system hardening based on CIS security benchmarks. To validate the effectiveness of these controls, the framework then integrates with MITRE Caldera to programmatically deploy agents and execute automated adversary emulation scenarios against the hardened machine.",
         tags: ["python", "powershell", "generativeAI", "CISBenchmarks", "MITRECaldera"],
-        githubURL: "GIVE URL HERE"
+        githubURL: "https://github.com/PanagiotisTselentis/Automated-CIS-Hardening-Adversary-Emulation"
+    }
+    ,
+    {
+        id: 3,
+        title: "Active Directory Setup and Exploitation Lab",
+        description: "A comprehensive lab environment designed to simulate a corporate Active Directory setup, complete with multiple user roles, group policies, and security configurations. The lab serves as a practical platform for learning and practicing various AD exploitation techniques.",
+        tags: ["ActiveDirectory", "PowerShell", "BloodHound", "Impacket", "Mimikatz"],
+        githubURL: "https://github.com/PanagiotisTselentis/ActiveDirectoryLab"
     }
 ]
 
